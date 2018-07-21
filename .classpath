@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="spider/src"/>
+	<classpathentry kind="lib" path="C:/Users/ZX/Desktop/JavaLib/jsoup-1.11.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ZX/Desktop/JavaLib/jsoup-1.11.3-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ZX/Desktop/JavaLib/okhttp-3.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ZX/Desktop/JavaLib/okio-1.15.0.jar"/>
+	<classpathentry kind="output" path="spider/bin"/>
+</classpath>

@@ -23,7 +23,6 @@ public class App {
 		
 		while (true) {
 			if (pool.isTerminated()) {
-				
 				break;
 			}else {
 				try {
@@ -38,9 +37,11 @@ public class App {
 			pool.execute(new DownlandImg(f));
 		}
 		pool.shutdown();
-		for (Film f : filmList) {
-			System.out.println(f);
-		}
+//		for (Film f : filmList) {
+//			System.out.println(f);
+//		}
+		OutXml out = new OutXml(filmList);
+		out.outXml();
 	}
 	
 }

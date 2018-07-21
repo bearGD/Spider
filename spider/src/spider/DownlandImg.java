@@ -21,7 +21,7 @@ public class DownlandImg implements Runnable{
 			if(!path.exists())
 				path.mkdir();
 			
-			try (FileOutputStream fout = new FileOutputStream(new File(path,film.getId()+ ".jpg"))){
+			try (FileOutputStream fout = new FileOutputStream(new File(path,film.getTitle().split(" ") + ".jpg"))){
 				byte[] data = new OkHttpClient.Builder().build()
 					.newCall(new Request.Builder().url(film.getPoster()).build())
 					.execute()
