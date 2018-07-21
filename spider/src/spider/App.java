@@ -23,6 +23,8 @@ public class App {
 		
 		while (true) {
 			if (pool.isTerminated()) {
+				//对爬到电影信息根据排行id排序
+				Collections.sort(filmList);
 				break;
 			}else {
 				try {

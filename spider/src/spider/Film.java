@@ -1,6 +1,6 @@
 package spider;
 
-public class Film {
+public class Film implements Comparable<Film>{
 	
 	//字段
 	/**
@@ -60,6 +60,21 @@ public class Film {
 	 * 语言
 	 */
 	String language;
+	
+	public Film() {
+		this.title = "";
+		this.actor = "";
+		this.director = "";
+		this.language = "";
+		this.makePlace = "";
+		this.movieTime = "";
+		this.poster = "";
+		this.queto = "";
+		this.releaseTime = "";
+		this.scriptwriter = "";
+		this.type = "";
+	}
+	
 	/**
 	 * @return the id
 	 */
@@ -245,5 +260,9 @@ public class Film {
 				+ "\nmakePlace: " + makePlace
 				+ "\nreleaseTime: " + releaseTime 
 				+ "\nmovieTime: " + movieTime + "\n}";
+	}
+	@Override
+	public int compareTo(Film o) {
+		return this.id - o.id;
 	}
 }

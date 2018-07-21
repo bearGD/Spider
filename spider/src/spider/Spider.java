@@ -50,6 +50,17 @@ public class Spider implements Runnable{
 				String title = item.select(".info .title").text();
 				film.setTitle(title);
 				
+				String grade = item.select(".star .rating_num").text();
+				film.setGrade(Double.parseDouble(grade));
+				
+				String num = item.select(".star span").last().text();
+				String n = num.substring(0, num.indexOf("人"));
+				film.setCommentNum(Integer.parseInt(n));
+				
+				String quote = item.select(".info .quote").text();
+				film.setQueto(quote);
+				
+				
 				String a = item.select(".info .hd a[href]").attr("href");
 				Document d;
 				try {
@@ -83,34 +94,6 @@ public class Spider implements Runnable{
 				film.setReleaseTime(releaseTime);
 				String movieTime = subitem.get(0).select("#wrapper #info span[property=v:runtime]").text();
 				film.setMovieTime(movieTime);
-				
-				// 获取首页的导演、演员信息
-				// String director = subitem.select(".attrs").get(0).text();
-				// String scriptwriter = subitem.select(".attrs").get(1).text();
-				// String actor = subitem.select(".attrs").get(2).text();
-				// String info = item.select(".info p").first().text();
-				// String director = "";
-				// if(info.indexOf("主") >0) {
-				// director = info.substring(info.indexOf("导演") + 3, info.indexOf("主"));
-				// }
-				// String actor = "";
-				// if (info.indexOf(" 1") > 0) {
-				// actor = info.substring(info.indexOf("主") + 3, info.indexOf(" 1"));
-				// } else if (info.indexOf(" 2") > 0) {
-				// actor = info.substring(info.indexOf("主") + 3, info.indexOf(" 2"));
-				// }
-				// film.setDirector(director);
-				// film.setActor(actor);
-				
-				String grade = item.select(".star .rating_num").text();
-				film.setGrade(Double.parseDouble(grade));
-				
-				String num = item.select(".star span").last().text();
-				String n = num.substring(0, num.indexOf("人"));
-				film.setCommentNum(Integer.parseInt(n));
-				
-				String quote = item.select(".info .quote").text();
-				film.setQueto(quote);
 				
 				filmList.add(film);
 				System.out.println(Thread.currentThread().getName() + "  爬取    排行第" + id + "的电影");
